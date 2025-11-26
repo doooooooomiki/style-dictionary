@@ -21,6 +21,21 @@ export default {
             },
           },
         },
+        {
+          format: 'tailwind-theme-variables',
+          destination: 'src/styles/_theme.css',
+          options: {
+            outputReferences: true,
+            fileHeader: async (defaultMessages: string[] | undefined) => {
+              return [
+                ...(defaultMessages ?? []),
+                'Do not edit please',
+                'Auto-generated on...',
+                `${new Date().toISOString()}`,
+              ];
+            },
+          },
+        },
       ],
     },
   },
